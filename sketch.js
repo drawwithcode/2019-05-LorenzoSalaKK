@@ -31,6 +31,18 @@ function setup() {
 
 function draw() {
   background(mybg);
+
+  var myText = "Use < and > to open the pot and play the bagpipe to make the snake dance! \n If it doesn't work, try to click on the 'Loading...' text";
+
+  textFont("Arial");
+  textAlign(CENTER);
+  textSize(30);
+  fill('black');
+  strokeWeight(2);
+  stroke('white')
+  text(myText, width/2, height/5);
+
+
   var myImage = capture.loadPixels();
   image(myImage, windowWidth / 15.5, windowHeight / 2.35, 320 * 1.2, 240 * 1.2);
 
