@@ -1,6 +1,5 @@
 var x;
 var y;
-var mic;
 var mybg;
 var pot;
 var cop;
@@ -8,20 +7,22 @@ var open;
 var remap;
 var player;
 var capture;
+var mic;
 
 function preload() {
   mybg = loadImage("./assets/background.jpg");
   cop = loadImage("./assets/coperchio.png");
   pot = loadImage("./assets/pot.png");
   player = loadImage("./assets/player.png")
+  mic;
 }
 
 function setup() {
   frameRate(30);
-  createCanvas(windowWidth, windowHeight);
-  noStroke();
   mic = new p5.AudioIn();
   mic.start();
+  createCanvas(windowWidth, windowHeight);
+  noStroke();
   angleMode(DEGREES);
 
   capture = createCapture(VIDEO);
@@ -29,10 +30,15 @@ function setup() {
   capture.hide();
 }
 
+function mouseClicked() {
+  var k = true;
+  console.log('click');
+}
+
 function draw() {
   background(mybg);
 
-  var myText = "Use < and > to open the pot and play the bagpipe to make the snake dance! \n If it doesn't work, try to click on the 'Loading...' text";
+  var myText = "Use < and > to open the pot and play the bagpipe to make the snake dance! \n If it doesn't work, try to interact with the page before it starts or use FireFox";
 
   textFont("Arial");
   textAlign(CENTER);
